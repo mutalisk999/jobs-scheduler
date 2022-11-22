@@ -22,7 +22,7 @@ def start_schedule():
             if basename not in (['__init__.py', '__pycache__']):
                 if not basename.endswith(".py"):
                     continue
-                modname = 'jobs.' + basename.rstrip(".py")
+                modname = 'jobs.' + basename[:-3]
                 if modname in job_register.keys():
                     job_active_round.add(modname)
                     continue
